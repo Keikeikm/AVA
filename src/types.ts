@@ -76,7 +76,8 @@ export type EngineConfig =
   | ({ type: 'python' } & PythonEngineOptions)
   | { type: 'javascript' }
   | { type: 'supabase' }
-  | { type: 'clickhouse' };
+  | { type: 'clickhouse' }
+  | { type: 'snowflake' };
 
 /**
  * AVA configuration
@@ -117,7 +118,8 @@ export type SourceType =
   | 'sqlite'
   | 'mongodb'
   | 'supabase'
-  | 'clickhouse';
+  | 'clickhouse'
+  | 'snowflake';
 
 /**
  * DuckDB read_csv reader options.
@@ -409,6 +411,31 @@ export type ClickHouseSourceOptions = Omit<ClickHouseClientConfigOptions, 'host'
   password?: string;
 };
 
+export type SnowflakeAuthenticator = 
+  | 'SNOWFLAKE'
+  | 'SNOWFLAKE_JWT'
+  | 'OAUTH'
+  | 'PROGRAMMATIC_ACCESS_TOKEN';
+
+export interface SnowflakeSourceOptions {
+  account: string;
+  username:string;
+  password?:string;
+  authenticator?: SnowflakeAuthenticator;
+  privateKey?: string;
+  privateKeyPath?: string;
+  preivateKeyPass?:string;
+  token?:string;
+  warehouse:string;
+  database:string;
+  schema?:string;
+  role?:string;
+  accessUrl?:string;
+  queryTag?:string;
+  queryTimeoutMs?:number;
+  secoundaryRoles?:'NONE' | 'ALL';
+}
+
 /**
  * External data source configuration for loadSource.
  * - inline types (csv/json/text): data is materialized into JS memory
@@ -430,7 +457,8 @@ export type DataSourceConfig =
   | { type: 'sqlite'; options: SQLiteSourceOptions }
   | { type: 'mongodb'; options: MongoDBSourceOptions }
   | { type: 'supabase'; options: SupabaseSourceOptions }
-  | { type: 'clickhouse'; options: ClickHouseSourceOptions };
+  | { type: 'clickhouse'; options: ClickHouseSourceOptions }
+  | { type: 'snowflake'; options: SnowflakeSourceOptions};
 
 /**
  * File formats readable by DuckDB's readers (csv-file maps to csv, json-file to json).

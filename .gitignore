@@ -115,3 +115,6 @@ docs/
 # BIRD scoring runtime
 /evals/BIRD/.venv/
 /evals/reports/BIRD/
+
+
+task/

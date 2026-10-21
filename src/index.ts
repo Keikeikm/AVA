@@ -5,12 +5,13 @@
 
 import { DuckDBEngine } from './duckdb';
 import { JavaScriptEngine, PythonEngine } from './interpreter';
-import { ClickHouseEngine, SupabaseEngine } from './remote';
+import { ClickHouseEngine, SupabaseEngine,SnowflakeEngine } from './remote';
 import { registerEngine } from './engines';
 
 registerEngine('duckdb', DuckDBEngine);
 registerEngine('clickhouse', ClickHouseEngine);
 registerEngine('supabase', SupabaseEngine);
+registerEngine('snowflake', SnowflakeEngine);
 registerEngine('javascript', JavaScriptEngine);
 registerEngine('python', PythonEngine);
 
@@ -26,6 +27,8 @@ export type {
   PythonEngineOptions,
   DataSourceConfig,
   ClickHouseSourceOptions,
+  SnowflakeAuthenticator,
+  SnowflakeSourceOptions,
   Schema,
   TableSchema,
   TableIndex,
