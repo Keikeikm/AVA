@@ -424,7 +424,7 @@ export interface SnowflakeSourceOptions {
   authenticator?: SnowflakeAuthenticator;
   privateKey?: string;
   privateKeyPath?: string;
-  preivateKeyPass?:string;
+  privateKeyPass?:string;
   token?:string;
   warehouse:string;
   database:string;
@@ -433,7 +433,7 @@ export interface SnowflakeSourceOptions {
   accessUrl?:string;
   queryTag?:string;
   queryTimeoutMs?:number;
-  secoundaryRoles?:'NONE' | 'ALL';
+  secondaryRoles?:'NONE' | 'ALL';
 }
 
 /**

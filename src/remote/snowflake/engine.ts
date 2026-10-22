@@ -1,11 +1,19 @@
 import type {AnalysisEngine,DataContext,DataSourceConfig,ExecutionOptions,ExecutionResult,Profile,ProfileOptions,Schema} from '../../types';
+import { destroyConnection } from './dispose';
+import {openSession} from './session-load';
+import { createSnowflakeConnection, type SnowflakeDriver } from './driver';
 
 export class SnowflakeEngine implements AnalysisEngine{
     readonly language = {name :'Snowflake SQL dialect',fence :'sql'};
-
+    private connection:SnowflakeDriver | null = null;
     async load(config: DataSourceConfig): Promise<Schema>{
-        void config;
-        throw new Error('SnowflakEngine.load is not implemented');
+        await this.dispose();
+        if(config.type !== 'snowflake'){
+            throw new Error(`SnowflakeEngine only supports Snowflake data sources, got '${config.type}'`);
+        }
+        const connection = createSnowflakeConnection(config.options);
+        this.connection = connection
+        return openSession(config.options,connection,(sql)=>connection.execute(sql),()=>this.dispose());
     }
     async profile(options: ProfileOptions = {}): Promise<Profile>{
         void options;
@@ -22,7 +30,9 @@ export class SnowflakeEngine implements AnalysisEngine{
         throw new Error('SnowflakEngine.execute is not implemented');
     }
     async dispose(): Promise<void> {
-        return;
+        const connection = this.connection;
+        this.connection = null;
+        await destroyConnection(connection);
     }
 
 }
