@@ -1,0 +1,56 @@
+site/public/llms.txt
+  s_b5f851ac57bd0f::t_bf3e9ddefb84bc 21,60
+site/public/sitemap.xml
+  s_b5f851ac57bd0f::t_bf3e9ddefb84bc 51-52
+site/content/docs/zh/data/sources.mdx
+  s_b5f851ac57bd0f::t_d2fa32afdf657f 456
+  s_b5f851ac57bd0f::t_bf3e9ddefb84bc 441-442
+site/lib/docs.ts
+  s_b5f851ac57bd0f::t_69dd365bda98d4 41-45
+site/public/diagrams/feishu-access-en.svg
+  s_b5f851ac57bd0f::t_25321f109d0115 1-6,8-9,12-14,17-18
+  s_b5f851ac57bd0f::t_51ef4b0591497a 7,10-11,15-16
+site/messages/zh.json
+  s_b5f851ac57bd0f::t_bf3e9ddefb84bc 475-478
+site/public/diagrams/feishu-setup-zh.svg
+  s_b5f851ac57bd0f::t_7eee16c0a06517 6
+  s_b5f851ac57bd0f::t_25321f109d0115 1-5,7-22
+site/messages/en.json
+  s_b5f851ac57bd0f::t_bf3e9ddefb84bc 488-491
+site/content/docs/zh/data/feishu-bitable.mdx
+  s_b5f851ac57bd0f::t_bf3e9ddefb84bc 1-201
+site/content/docs/en/data/feishu-bitable.mdx
+  s_b5f851ac57bd0f::t_bf3e9ddefb84bc 1-4,6-202
+  s_b5f851ac57bd0f::t_25321f109d0115 5
+site/scripts/check-docs.mjs
+  s_b5f851ac57bd0f::t_d2fa32afdf657f 3-4,7,132,136
+  s_b5f851ac57bd0f::t_51ef4b0591497a 80-81
+site/public/diagrams/feishu-setup-en.svg
+  s_b5f851ac57bd0f::t_25321f109d0115 1-5,7-22
+  s_b5f851ac57bd0f::t_7eee16c0a06517 6
+site/next.config.mjs
+  s_b5f851ac57bd0f::t_45a5f8676f35ec 2,21
+site/public/diagrams/feishu-access-zh.svg
+  s_b5f851ac57bd0f::t_25321f109d0115 1-18
+site/content/docs/index.ts
+  s_b5f851ac57bd0f::t_bf3e9ddefb84bc 6,32
+site/content/docs/en/data/sources.mdx
+  s_b5f851ac57bd0f::t_bf3e9ddefb84bc 439-440
+  s_b5f851ac57bd0f::t_d2fa32afdf657f 454
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.51-trip",
+  "base_commit_sha": "5176c668ecf4dfa05815c90182360049e99ab18c",
+  "prompts": {},
+  "sessions": {
+    "s_b5f851ac57bd0f": {
+      "agent_id": {
+        "tool": "codex",
+        "id": "01a1a692-3ec1-7921-a847-5f0f102a73d2",
+        "model": "gpt-6.1-sol"
+      },
+      "human_author": "kk <keikeiikm@163.com>"
+    }
+  }
+}
