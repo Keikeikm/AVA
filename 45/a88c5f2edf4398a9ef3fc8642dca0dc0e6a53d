@@ -1,0 +1,27 @@
+src/duckdb/loaders/index.ts
+  s_51779d70f2bd02::t_e75ca07ffddf4e 57-58
+src/types.ts
+  s_51779d70f2bd02::t_f1be0cb6cb7da5 439-440
+  s_51779d70f2bd02::t_9d0162ba3ca315 416-417
+---
+{
+  "schema_version": "authorship/3.0.0",
+  "git_ai_version": "1.4.51-trip",
+  "base_commit_sha": "45a88c5f2edf4398a9ef3fc8642dca0dc0e6a53d",
+  "prompts": {},
+  "humans": {
+    "h_387adc9553c490": {
+      "author": "kk <keikeiikm@163.com>"
+    }
+  },
+  "sessions": {
+    "s_51779d70f2bd02": {
+      "agent_id": {
+        "tool": "cursor",
+        "id": "c42effa0-8e14-4d78-a15b-c905bc9ab479",
+        "model": "grok-4.7"
+      },
+      "human_author": "kk <keikeiikm@163.com>"
+    }
+  }
+}
